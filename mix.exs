@@ -35,10 +35,12 @@ defmodule UUID5.Mixfile do
 
   # Package info.
   defp package do
-    [files: ["lib", "mix.exs", "README.md", "LICENSE"],
-     maintainers: ["Andrey Noskov"],
-     licenses: ["Apache 2.0"],
-     links: %{"GitHub" => "https://github.com/anoskov/uuid5_ecto_type"}]
+    [
+      name: :uuid5,
+      files: ["lib", "mix.exs"],
+      maintainers: ["Andrey Noskov"],
+      licenses: ["Apache 2.0"],
+      links: %{"GitHub" => "https://github.com/anoskov/uuid5_ecto_type"}]
   end
 
 end
