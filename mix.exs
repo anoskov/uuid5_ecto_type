@@ -1,7 +1,7 @@
 defmodule UUID5.Mixfile do
   use Mix.Project
 
-  @version "1.0.0"
+  @version "1.0.1"
 
   def project do
     [app: :uuid5,
@@ -17,7 +17,10 @@ defmodule UUID5.Mixfile do
 
   # Application configuration.
   def application do
-    []
+    [
+      mod: {UUID5, []},
+      applications: [:uuid]
+    ]
   end
 
   # List of dependencies.
