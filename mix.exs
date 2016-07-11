@@ -18,7 +18,6 @@ defmodule UUID5.Mixfile do
   # Application configuration.
   def application do
     [
-      mod: {UUID5, []},
       applications: [:uuid]
     ]
   end
