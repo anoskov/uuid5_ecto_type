@@ -1,13 +1,13 @@
 defmodule UUID5.Mixfile do
   use Mix.Project
 
-  @version "1.0.1"
+  @version "1.0.2"
 
   def project do
     [app: :uuid5,
      name: "UUID5_Ecto_Type",
      version: @version,
-     elixir: "~> 1.0",
+     elixir: "~> 1.3",
      docs: [],
      source_url: "https://github.com/anoskov/uuid5_ecto_type",
      description: description(),
@@ -25,7 +25,7 @@ defmodule UUID5.Mixfile do
   # List of dependencies.
   defp deps do
     [{:uuid, "~> 1.1"},
-     {:ecto, "~> 1.1.2"}]
+     {:ecto, "~> 1.1"}]
   end
 
   # Description.
