@@ -1,7 +1,7 @@
 defmodule UUID5.Mixfile do
   use Mix.Project
 
-  @version "1.0.2"
+  @version "1.0.3"
 
   def project do
     [app: :uuid5,
