@@ -9,17 +9,20 @@ defmodule UUID5 do
   @doc """
   The Ecto type.
   """
+  @spec type :: atom
   def type, do: :uuid5
 
   @doc """
   Casts to UUID.
   """
+  @spec cast(binary) :: {atom, binary}
   def cast(<< _::64, ?-, _::32, ?-, _::32, ?-, _::32, ?-, _::96 >> = u), do: {:ok, u}
   def cast(_), do: :error
 
   @doc """
   Converts a string representing a UUID into a binary.
   """
+  @spec dump(String.t) :: binary | atom | {atom, map}
   def dump(uuid) do
     try do
       UUID.string_to_binary!(uuid)
@@ -34,6 +37,7 @@ defmodule UUID5 do
   @doc """
   Converts a binary UUID into a string.
   """
+  @spec load(binary | map) :: {atom, String.t} | atom
   def load(<<_::128>> = uuid) do
    {:ok, UUID.binary_to_string!(uuid)}
   end
@@ -49,6 +53,7 @@ defmodule UUID5 do
   @doc """
   Generates a version 5 (dns) UUID.
   """
+  @spec generate :: String.t
   def generate do
     UUID.uuid5(:dns, UUID.uuid4)
   end
