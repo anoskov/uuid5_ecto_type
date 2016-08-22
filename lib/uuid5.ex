@@ -27,7 +27,7 @@ defmodule UUID5 do
       :error -> :error
     else
       binary ->
-        {:ok, %Ecto.Query.Tagged{type: :uuid5, value: binary}}
+        {:ok, binary}
     end
   end
 
