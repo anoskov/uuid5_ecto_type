@@ -5,6 +5,7 @@ defmodule UUID5 do
   """
 
   @behaviour Ecto.Type
+  @type t :: <<_::288>>
 
   @doc """
   The Ecto type.
@@ -53,4 +54,6 @@ defmodule UUID5 do
     UUID.uuid5(:dns, UUID.uuid4)
   end
 
+  def autogenerate, do: generate()
 end
+
