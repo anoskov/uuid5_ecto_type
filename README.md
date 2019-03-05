@@ -31,6 +31,13 @@ iex(1)> UUID5.generate
 "96bcc916-6bbc-5f61-8d88-bd83ed4b0b17"
 ```
 
+* Generate UUID5 string based on DNS without dashes
+
+```elixir
+iex(1)> UUID5.generate(:hex)
+"96bcc9166bbc5f618d88bd83ed4b0b17"
+```
+
 * Set UUID5 type for field in your model
 
 ```elixir

@@ -56,6 +56,12 @@ defmodule UUID5 do
     UUID.uuid5(:dns, UUID.uuid4)
   end
 
+  @doc """
+  Generates a version 5 (dns) UUID without dashes.
+  """
+  def generate(:hex) do
+    UUID.uuid5(:dns, UUID.uuid4, :hex)
+  end
+
   def autogenerate, do: generate()
 end
-
