@@ -64,4 +64,6 @@ defmodule UUID5 do
   end
 
   def autogenerate, do: generate()
+  def embed_as(_), do: :self
+  def equal?(term1, term2), do: term1 == term2
 end
