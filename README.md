@@ -10,15 +10,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 ```elixir
 def deps do
-  [{:uuid5, "~> 1.1"}]
-end
-```
-
-* Ensure `uuid5` is started before your application:
-
-```elixir
-def application do
-  [applications: [:uuid5]]
+  [{:uuid5, "~> 1.2"}]
 end
 ```
 
