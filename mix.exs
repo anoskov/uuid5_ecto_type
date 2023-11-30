@@ -1,7 +1,7 @@
 defmodule UUID5.Mixfile do
   use Mix.Project
 
-  @version "1.1.6"
+  @version "1.2.0"
 
   def project do
     [app: :uuid5,
@@ -18,13 +18,13 @@ defmodule UUID5.Mixfile do
   # Application configuration.
   def application do
     [
-      applications: [:uuid]
+      applications: []
     ]
   end
 
   # List of dependencies.
   defp deps do
-    [{:uuid, "~> 1.1"},
+    [{:elixir_uuid, "~> 1.2"},
      {:ecto, "~> 2.0 or ~> 3.0", optional: true},
      {:ex_doc, ">= 0.0.0", only: :dev}]
   end
