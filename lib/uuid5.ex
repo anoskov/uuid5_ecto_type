@@ -17,21 +17,26 @@ defmodule UUID5 do
   @doc """
   Casts to UUID.
   """
-  def cast(<< _::64, ?-, _::32, ?-, _::32, ?-, _::32, ?-, _::96 >> = u), do: {:ok, u}
+  def cast(<< _::64, ?-, _::32, ?-, _::32, ?-, _::32, ?-, _::96 >> = u) do
+    if hex?(u), do: {:ok, u}, else: :error
+  end
   def cast(_), do: :error
+
+  defp hex?(u) do
+    u
+    |> :binary.bin_to_list()
+    |> Enum.all?(fn c ->
+      c == ?- or c in ?0..?9 or c in ?a..?f or c in ?A..?F
+    end)
+  end
 
   @doc """
   Converts a string representing a UUID into a binary.
   """
   def dump(uuid) do
-    try do
-      UUID.string_to_binary!(uuid)
-    catch
-      :error -> :error
-    else
-      binary ->
-        {:ok, binary}
-    end
+    {:ok, UUID.string_to_binary!(uuid)}
+  rescue
+    ArgumentError -> :error
   end
 
   @doc """
@@ -68,6 +73,4 @@ defmodule UUID5 do
   end
 
   def autogenerate, do: generate()
-  def embed_as(_), do: :self
-  def equal?(term1, term2), do: term1 == term2
 end

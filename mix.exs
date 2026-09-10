@@ -16,10 +16,12 @@ defmodule UUID5.Mixfile do
   end
 
   # Application configuration.
+  #
+  # The applications this library needs are inferred from `deps/0`. An explicit
+  # empty list overrides that inference, and since Elixir 1.15 prunes the code
+  # path to the declared applications, `elixir_uuid` was left out of it.
   def application do
-    [
-      applications: []
-    ]
+    []
   end
 
   # List of dependencies.
